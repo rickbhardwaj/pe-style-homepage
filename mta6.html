@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   .stage { background: #0a0a0b; }
-  video.stage__bg { filter: contrast(1.06) saturate(1.05) brightness(0.86); object-position: center 55%; }
+  video.stage__bg { filter: contrast(1.06) saturate(1.05) brightness(0.86); object-position: center 50%; }
   .scrim {
     background:
       linear-gradient(180deg, rgba(8,8,10,0.66) 0%, rgba(8,8,10,0.12) 30%, rgba(8,8,10,0.34) 62%, rgba(8,8,10,0.94) 100%),
@@ -23,14 +23,14 @@
 <body>
 <div class="stage stage--dark">
   <video class="stage__bg" autoplay muted loop playsinline preload="auto" id="bg">
-    <source src="mta_platform.mp4" type="video/mp4">
+    <source src="mta_ftrain.mp4" type="video/mp4">
   </video>
   <div class="scrim"></div>
-  <div class="pvw">MTA preview — D · Platform</div>
+  <div class="pvw">MTA preview — F · F Train</div>
 
   <header class="nav">
     <div class="mark">Strange&nbsp;Loop</div>
-    <div class="meta">MTA · Platform</div>
+    <div class="meta">MTA · F Train, B'way-Lafayette</div>
   </header>
 
   <div class="frame">
@@ -74,9 +74,9 @@
   <a href="mta1.html">A · 7 Train</a>
   <a href="mta2.html">B · Express</a>
   <a href="mta3.html">C · Elevated</a>
-  <a href="mta4.html" class="active">D · Platform</a>
+  <a href="mta4.html">D · Platform</a>
   <a href="mta5.html">E · Arriving</a>
-  <a href="mta6.html">F · F Train</a>
+  <a href="mta6.html" class="active">F · F Train</a>
   <a href="option8.html" style="opacity:.6">↩ Chicago</a>
 </nav>
 
