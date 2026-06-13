@@ -160,16 +160,18 @@ video.stage__bg { object-fit: cover; }
 
 /* ---------- concept switcher (peruse the three) ---------- */
 .switcher {
-  position: fixed; z-index: 60; bottom: 18px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 4px; padding: 5px;
-  background: rgba(244,243,239,0.82);
+  position: fixed; z-index: 60; bottom: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 3px; padding: 5px;
+  max-width: 94vw; overflow-x: auto; scrollbar-width: none;
+  background: rgba(244,243,239,0.84);
   backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--line); border-radius: 100px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.16);
 }
+.switcher::-webkit-scrollbar { display: none; }
 .switcher a {
-  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase;
-  padding: 8px 13px; border-radius: 100px; color: var(--muted);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 8px 12px; border-radius: 100px; color: var(--muted); white-space: nowrap;
   transition: background .2s, color .2s;
 }
 .switcher a:hover { color: var(--ink); }
