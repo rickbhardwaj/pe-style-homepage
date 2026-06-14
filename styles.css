@@ -89,27 +89,27 @@ video.stage__bg { object-fit: cover; }
 .modal {
   position: fixed; inset: 0; z-index: 200;
   background: #08080a; color: #f4f3ef;
-  overflow-y: auto;
+  display: flex; overflow-y: auto;
   opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility .4s;
 }
 .modal.open { opacity: 1; visibility: visible; }
 .modal__inner {
-  max-width: 680px; margin: 0 auto;
-  padding: clamp(84px, 15vh, 168px) var(--gutter) clamp(80px, 12vh, 120px);
+  max-width: 660px; width: 100%; margin: auto;
+  padding: clamp(72px, 12vh, 132px) var(--gutter);
 }
 .modal__eyebrow {
   font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(244,243,239,0.55); margin: 0 0 22px;
+  text-transform: uppercase; color: rgba(244,243,239,0.5); margin: 0 0 30px;
 }
-.modal h2 {
-  font-family: var(--serif); font-weight: 300;
-  font-size: clamp(32px, 5.2vw, 56px); line-height: 1.04; letter-spacing: -0.02em;
-  margin: 0 0 clamp(28px, 5vh, 48px);
+.modal__lead {
+  font-family: var(--sans); font-weight: 400;
+  font-size: clamp(19px, 2vw, 25px); line-height: 1.5; letter-spacing: -0.01em;
+  color: #f4f3ef; margin: 0 0 1.15em;
 }
 .modal p {
   font-family: var(--sans); font-weight: 400;
   font-size: clamp(15.5px, 1.45vw, 18px); line-height: 1.66;
-  color: rgba(244,243,239,0.84); margin: 0 0 1.25em; max-width: 60ch;
+  color: rgba(244,243,239,0.82); margin: 0 0 1.25em; max-width: 62ch;
 }
 .modal p:last-child { margin-bottom: 0; }
 .modal__close {
