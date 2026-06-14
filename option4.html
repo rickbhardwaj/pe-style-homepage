@@ -7,17 +7,36 @@
 <meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 04 — René Magritte, Golconda (1953): identical figures, infinitely repeated */
-  .stage { background: #d8dde0; }
-  img.stage__bg { object-fit: cover; object-position: center top; filter: saturate(0.92) brightness(1.03); }
-  .veil {
-    position: absolute; inset: 0; z-index: 1;
-    background:
-      linear-gradient(180deg, rgba(244,243,239,0.52) 0%, rgba(244,243,239,0.34) 38%,
-                      rgba(244,243,239,0.60) 70%, rgba(244,243,239,0.93) 100%),
-      linear-gradient(90deg, rgba(244,243,239,0.55) 0%, rgba(244,243,239,0.10) 46%, rgba(244,243,239,0) 70%);
+  /* Concept 04 — Magritte, Golconda (1953): art pinned right at a crisp scale; copy on clean paper left */
+  .stage { background: #f4f3ef; }
+  img.stage__bg {
+    inset: 0 0 0 auto; width: 60%; height: 100%;
+    object-fit: cover; object-position: center top;
+    filter: saturate(0.95) brightness(1.02);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
   }
+  .veil {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
+            mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
+    background:
+      linear-gradient(90deg, #f4f3ef 0%, #f4f3ef 38%, rgba(244,243,239,0.92) 50%,
+                      rgba(244,243,239,0.5) 62%, rgba(244,243,239,0) 80%),
+      linear-gradient(180deg, rgba(244,243,239,0.25) 0%, rgba(244,243,239,0) 26%,
+                      rgba(244,243,239,0) 70%, rgba(244,243,239,0.55) 100%);
+  }
+  .frame > div { max-width: 540px; }
   .headline { text-shadow: 0 1px 0 rgba(244,243,239,0.6); }
+  @media (max-width: 860px) {
+    img.stage__bg { inset: 0; width: 100%; -webkit-mask-image: none; mask-image: none; }
+    .veil { -webkit-backdrop-filter: none; backdrop-filter: none;
+            -webkit-mask-image: none; mask-image: none;
+            background: linear-gradient(180deg, rgba(244,243,239,0.64) 0%, rgba(244,243,239,0.42) 38%,
+                        rgba(244,243,239,0.68) 70%, rgba(244,243,239,0.95) 100%); }
+    .frame > div { max-width: none; }
+  }
 </style>
 </head>
 <body>
@@ -33,7 +52,7 @@
   <div class="frame">
     <div>
       <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
-      <p class="intro">We're a team of elite AI engineers from <b>Amazon Alexa</b>, <b>AWS</b>, and <b>Google</b>. Below are selected case studies:</p>
+      <p class="intro">Selected Case Studies</p>
     </div>
 
     <div class="studies">
