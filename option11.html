@@ -7,41 +7,41 @@
 <meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 04 — Magritte, Golconda (1953): art pinned right at a crisp scale; copy on clean paper left */
-  .stage { background: #f4f3ef; }
+  /* Concept — Fritz Kahn, Der Mensch als Industriepalast (1926). The body as a coordinated system. */
+  .stage { background: #ece7da; }
   img.stage__bg {
-    inset: 0 0 0 auto; width: 60%; height: 100%;
-    object-fit: cover; object-position: center top;
-    filter: saturate(0.95) brightness(1.02);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
-            mask-image: linear-gradient(90deg, transparent 0%, #000 36%);
+    inset: 0 0 0 auto; width: 50%; height: 100%;
+    object-fit: cover; object-position: center 32%;
+    filter: contrast(1.03) saturate(1.04);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
   }
   .veil {
     position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
-            mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 74%);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 46%, transparent 72%);
+            mask-image: linear-gradient(90deg, #000 0%, #000 46%, transparent 72%);
     background:
-      linear-gradient(90deg, #f4f3ef 0%, #f4f3ef 38%, rgba(244,243,239,0.92) 50%,
-                      rgba(244,243,239,0.5) 62%, rgba(244,243,239,0) 80%),
-      linear-gradient(180deg, rgba(244,243,239,0.25) 0%, rgba(244,243,239,0) 26%,
-                      rgba(244,243,239,0) 70%, rgba(244,243,239,0.55) 100%);
+      linear-gradient(90deg, #ece7da 0%, #ece7da 40%, rgba(236,231,218,0.92) 52%,
+                      rgba(236,231,218,0.5) 64%, rgba(236,231,218,0) 82%),
+      linear-gradient(180deg, rgba(236,231,218,0.25) 0%, rgba(236,231,218,0) 26%,
+                      rgba(236,231,218,0) 70%, rgba(236,231,218,0.55) 100%);
   }
   .frame > div { max-width: 540px; }
-  .headline { text-shadow: 0 1px 0 rgba(244,243,239,0.6); }
+  .headline { text-shadow: 0 1px 0 rgba(236,231,218,0.7); }
   @media (max-width: 860px) {
-    img.stage__bg { inset: 0; width: 100%; -webkit-mask-image: none; mask-image: none; }
+    img.stage__bg { inset: 0; width: 100%; object-position: center 18%; -webkit-mask-image: none; mask-image: none; }
     .veil { -webkit-backdrop-filter: none; backdrop-filter: none;
             -webkit-mask-image: none; mask-image: none;
-            background: linear-gradient(180deg, rgba(244,243,239,0.64) 0%, rgba(244,243,239,0.42) 38%,
-                        rgba(244,243,239,0.68) 70%, rgba(244,243,239,0.95) 100%); }
+            background: linear-gradient(180deg, rgba(236,231,218,0.68) 0%, rgba(236,231,218,0.46) 38%,
+                        rgba(236,231,218,0.72) 70%, rgba(236,231,218,0.96) 100%); }
     .frame > div { max-width: none; }
   }
 </style>
 </head>
 <body>
 <div class="stage">
-  <img class="stage__bg" src="golconda.jpg" alt="René Magritte, Golconda, 1953">
+  <img class="stage__bg" src="kahn.jpg" alt="Fritz Kahn, Der Mensch als Industriepalast, 1926">
   <div class="veil"></div>
 
   <header class="nav">
@@ -87,11 +87,11 @@
 </div>
 
 <nav class="switcher">
-  <a href="option4.html" class="active">Golconda</a>
+  <a href="option4.html">Golconda</a>
   <a href="option8.html">Chicago L</a>
   <a href="option9.html">Greenwich Village</a>
   <a href="option10.html">Piranesi</a>
-  <a href="option11.html">Fritz Kahn</a>
+  <a href="option11.html" class="active">Fritz Kahn</a>
 </nav>
 
 <div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
