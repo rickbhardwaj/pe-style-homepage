@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Strange Loop</title>
 <meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* Concept 15 — restraint. The Greenoaks / Thrive / Long Lake register:
-     a near-empty paper canvas, the header kept, About + Case Studies demoted
-     to quiet links beneath the wordmark. Typography and whitespace do the work. */
+  /* Concept 15 — restraint, now system-themed. The Greenoaks / Thrive / Long
+     Lake register: the header kept, the thesis statement alone in the space,
+     and the case studies stated quietly beneath the header. Light or dark
+     follows the OS setting via prefers-color-scheme. */
   .stage { background: var(--paper); }
 
   /* header: wordmark, with the two links stacked underneath */
@@ -20,22 +22,33 @@
   .sublinks { display: flex; gap: clamp(20px, 3vw, 34px); }
   .sublinks .navlink { padding: 2px 0; }
 
-  /* the one statement, alone in the space */
-  .frame--quiet { gap: 0; }
+  /* statement + quiet case-study list, centered as one group */
+  .frame--quiet { gap: clamp(30px, 6vh, 64px); }
   .frame--quiet .headline { max-width: 17ch; }
 
-  /* Case Studies modal: quiet list, same white-on-black register as About */
-  .caselist { margin: clamp(8px, 2vh, 18px) 0 0; }
-  .caseitem {
-    display: grid; grid-template-columns: 46px 1fr; gap: clamp(14px, 2vw, 24px);
-    padding: clamp(18px, 3vh, 26px) 0;
-    border-top: 1px solid rgba(244,243,239,0.16);
+  .cases { max-width: 60ch; }
+  .caselist { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid var(--line); }
+  .case-row {
+    display: grid; grid-template-columns: 40px 1fr; align-items: baseline;
+    gap: clamp(12px, 2vw, 26px);
+    padding: clamp(13px, 1.9vh, 18px) 0;
+    border-bottom: 1px solid var(--line);
   }
-  .caseitem:last-child { border-bottom: 1px solid rgba(244,243,239,0.16); }
-  .ci-idx { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: rgba(244,243,239,0.5); padding-top: 5px; }
-  .ci-client { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(18px, 2vw, 23px); margin: 0 0 8px; }
-  .ci-client b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(15px, 1.5vw, 18px); }
-  .ci-desc { font-family: var(--sans); font-size: clamp(14.5px, 1.4vw, 16.5px); line-height: 1.6; color: rgba(244,243,239,0.74); margin: 0; max-width: 60ch; }
+  .case-row .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--muted); }
+  .case-row .name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(16px, 1.7vw, 21px); }
+  .case-row .name b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(14px, 1.45vw, 17px); }
+
+  /* ---- dark mode: follow the system ---- */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:   #ededea;
+      --paper: #0e0e10;
+      --muted: #8f8d87;
+      --line:  rgba(237, 237, 234, 0.15);
+    }
+    .switcher { background: rgba(22,22,24,0.82); border-color: var(--line); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+    .switcher a.active { background: #ededea; color: #0e0e10; }
+  }
 </style>
 </head>
 <body>
@@ -44,12 +57,30 @@
     <div class="mark">Strange&nbsp;Loop</div>
     <nav class="sublinks">
       <button class="navlink" type="button" data-about>About</button>
-      <button class="navlink" type="button" data-cases>Case&nbsp;Studies</button>
+      <a class="navlink" href="#cases">Case&nbsp;Studies</a>
     </nav>
   </header>
 
   <div class="frame frame--quiet">
     <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
+
+    <section class="cases" id="cases" aria-label="Selected Case Studies">
+      <p class="intro">Selected Case Studies</p>
+      <div class="caselist">
+        <div class="case-row">
+          <span class="num">01</span>
+          <span class="name">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></span>
+        </div>
+        <div class="case-row">
+          <span class="num">02</span>
+          <span class="name">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></span>
+        </div>
+        <div class="case-row">
+          <span class="num">03</span>
+          <span class="name">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></span>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
 
@@ -61,7 +92,7 @@
 
 <!-- About -->
 <div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
-  <button class="modal__close" type="button" data-close="about" aria-label="Close">&#10005;</button>
+  <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
     <p class="modal__eyebrow">About Us</p>
     <p class="modal__lead">We're a team of AI engineers from organizations like Amazon, Google, and UC Berkeley. We embed inside firms and work with experts end-to-end: designing the product, integrating with existing systems, and supporting it in production.</p>
@@ -71,45 +102,14 @@
   </div>
 </div>
 
-<!-- Case Studies -->
-<div class="modal" id="cases" role="dialog" aria-modal="true" aria-label="Selected Case Studies">
-  <button class="modal__close" type="button" data-close="cases" aria-label="Close">&#10005;</button>
-  <div class="modal__inner">
-    <p class="modal__eyebrow">Selected Case Studies</p>
-    <div class="caselist">
-      <div class="caseitem">
-        <span class="ci-idx">01</span>
-        <div>
-          <p class="ci-client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></p>
-          <p class="ci-desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
-        </div>
-      </div>
-      <div class="caseitem">
-        <span class="ci-idx">02</span>
-        <div>
-          <p class="ci-client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></p>
-          <p class="ci-desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
-        </div>
-      </div>
-      <div class="caseitem">
-        <span class="ci-idx">03</span>
-        <div>
-          <p class="ci-client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></p>
-          <p class="ci-desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
 (function () {
-  const open  = id => { document.getElementById(id).classList.add('open'); document.body.classList.add('modal-open'); };
-  const closeAll = () => { document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open')); document.body.classList.remove('modal-open'); };
-  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', () => open('about')));
-  document.querySelectorAll('[data-cases]').forEach(b => b.addEventListener('click', () => open('cases')));
-  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeAll));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+  const modal = document.getElementById('about');
+  const open  = () => { modal.classList.add('open');  document.body.classList.add('modal-open'); };
+  const close = () => { modal.classList.remove('open'); document.body.classList.remove('modal-open'); };
+  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', open));
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }());
 </script>
 </body>
