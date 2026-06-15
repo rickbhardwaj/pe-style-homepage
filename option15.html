@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strange Loop</title>
+<meta name="description" content="Strange Loop transforms financial services firms into AI-native institutions.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Concept 15 — restraint. The Greenoaks / Thrive / Long Lake register:
+     a near-empty paper canvas, the header kept, About + Case Studies demoted
+     to quiet links beneath the wordmark. Typography and whitespace do the work. */
+  .stage { background: var(--paper); }
+
+  /* header: wordmark, with the two links stacked underneath */
+  .nav--stack {
+    flex-direction: column; align-items: flex-start; justify-content: flex-start;
+    gap: clamp(12px, 1.8vh, 18px);
+  }
+  .sublinks { display: flex; gap: clamp(20px, 3vw, 34px); }
+  .sublinks .navlink { padding: 2px 0; }
+
+  /* the one statement, alone in the space */
+  .frame--quiet { gap: 0; }
+  .frame--quiet .headline { max-width: 17ch; }
+
+  /* Case Studies modal: quiet list, same white-on-black register as About */
+  .caselist { margin: clamp(8px, 2vh, 18px) 0 0; }
+  .caseitem {
+    display: grid; grid-template-columns: 46px 1fr; gap: clamp(14px, 2vw, 24px);
+    padding: clamp(18px, 3vh, 26px) 0;
+    border-top: 1px solid rgba(244,243,239,0.16);
+  }
+  .caseitem:last-child { border-bottom: 1px solid rgba(244,243,239,0.16); }
+  .ci-idx { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: rgba(244,243,239,0.5); padding-top: 5px; }
+  .ci-client { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(18px, 2vw, 23px); margin: 0 0 8px; }
+  .ci-client b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(15px, 1.5vw, 18px); }
+  .ci-desc { font-family: var(--sans); font-size: clamp(14.5px, 1.4vw, 16.5px); line-height: 1.6; color: rgba(244,243,239,0.74); margin: 0; max-width: 60ch; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <header class="nav nav--stack">
+    <div class="mark">Strange&nbsp;Loop</div>
+    <nav class="sublinks">
+      <button class="navlink" type="button" data-about>About</button>
+      <button class="navlink" type="button" data-cases>Case&nbsp;Studies</button>
+    </nav>
+  </header>
+
+  <div class="frame frame--quiet">
+    <h1 class="headline">Strange Loop transforms financial services firms into <em>AI-native</em> institutions.</h1>
+  </div>
+</div>
+
+<nav class="switcher">
+  <a href="option8.html">Chicago L</a>
+  <a href="option12.html">Bauhaus</a>
+  <a href="option15.html" class="active">Minimal</a>
+</nav>
+
+<!-- About -->
+<div class="modal" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
+  <button class="modal__close" type="button" data-close="about" aria-label="Close">&#10005;</button>
+  <div class="modal__inner">
+    <p class="modal__eyebrow">About Us</p>
+    <p class="modal__lead">We're a team of AI engineers from organizations like Amazon, Google, and UC Berkeley. We embed inside firms and work with experts end-to-end: designing the product, integrating with existing systems, and supporting it in production.</p>
+    <p>Our AI agents are built for financial workflows involving unstructured documents, labyrinthine spreadsheets, complex calculations, and firm-specific logic.</p>
+    <p>Each AI agent is owned by the client and runs on infrastructure they own, becoming a durable firm differentiator.</p>
+    <p>We partner closely with a small number of firms, typically one per practice. Our goal is to help these firms become the leading firm in their market.</p>
+  </div>
+</div>
+
+<!-- Case Studies -->
+<div class="modal" id="cases" role="dialog" aria-modal="true" aria-label="Selected Case Studies">
+  <button class="modal__close" type="button" data-close="cases" aria-label="Close">&#10005;</button>
+  <div class="modal__inner">
+    <p class="modal__eyebrow">Selected Case Studies</p>
+    <div class="caselist">
+      <div class="caseitem">
+        <span class="ci-idx">01</span>
+        <div>
+          <p class="ci-client">PwC&thinsp;—&thinsp;<b>Federal Partnership Tax Preparation Agent</b></p>
+          <p class="ci-desc">Automated complex partnership tax preparation workflows across tens of thousands of entities — work that once consumed entire seasons of specialist time.</p>
+        </div>
+      </div>
+      <div class="caseitem">
+        <span class="ci-idx">02</span>
+        <div>
+          <p class="ci-client">PwC&thinsp;—&thinsp;<b>K-1 / K-3 Reconciliation Agent</b></p>
+          <p class="ci-desc">Reduced manual reconciliation work by automating document review, validation, and exception handling — so professionals review judgments, not paperwork.</p>
+        </div>
+      </div>
+      <div class="caseitem">
+        <span class="ci-idx">03</span>
+        <div>
+          <p class="ci-client">KKR&thinsp;—&thinsp;<b>Management Fees Review Agent</b></p>
+          <p class="ci-desc">Built an AI system that analyzes management fee calculations and surfaces discrepancies across complex fund structures — before they compound.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const open  = id => { document.getElementById(id).classList.add('open'); document.body.classList.add('modal-open'); };
+  const closeAll = () => { document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open')); document.body.classList.remove('modal-open'); };
+  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', () => open('about')));
+  document.querySelectorAll('[data-cases]').forEach(b => b.addEventListener('click', () => open('cases')));
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeAll));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+}());
+</script>
+</body>
+</html>
