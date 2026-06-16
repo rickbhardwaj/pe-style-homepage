@@ -72,6 +72,18 @@
   .modal__contact a { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
   .modal__contact a:hover { color: #fff; }
 
+  /* careers list */
+  .modal__list { list-style: none; margin: 0 0 1.25em; padding: 0; }
+  .modal__list li {
+    font-family: var(--sans); font-weight: 400;
+    font-size: clamp(15.5px, 1.45vw, 18px); line-height: 1.66;
+    color: rgba(244,243,239,0.82); margin: 0 0 1em; max-width: 62ch;
+  }
+  .modal__list b { color: #f4f3ef; font-weight: 500; }
+
+  /* tall panels (Careers) scroll from the top rather than centring */
+  .modal--long .modal__inner { margin: 0 auto; }
+
   @media (max-width: 820px) {
     .split { grid-template-columns: 1fr; gap: clamp(30px, 6vh, 50px); align-items: start; }
   }
@@ -86,7 +98,8 @@
 
   <header class="nav nav--stack">
     <nav class="sublinks">
-      <button class="navlink" type="button" data-about>Company</button>
+      <button class="navlink" type="button" data-open="about">Company</button>
+      <button class="navlink" type="button" data-open="careers">Careers</button>
     </nav>
   </header>
 
@@ -135,6 +148,23 @@
   </div>
 </div>
 
+<!-- Careers -->
+<div class="modal modal--long" id="careers" role="dialog" aria-modal="true" aria-label="Careers at Strange Loop">
+  <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
+  <div class="modal__inner">
+    <p class="modal__eyebrow">Careers</p>
+    <p class="modal__lead">As AI becomes increasingly capable of professional work, the highest-leverage opportunity for exceptional engineers is no longer building software tools, but rather to embed within leading firms and rearchitect their operations around AI.</p>
+    <p>As a result, we&rsquo;re looking for a rare kind of engineer: someone who combines engineering rigor, product intuition, business judgment, and customer-facing charisma. Someone who can sit alongside executives and domain experts, identify leverage, and ship high-impact systems at extraordinary speed.</p>
+    <p>In other words: former founders, future founders, and engineers who think like owners. We&rsquo;ve built an engineering organization around this type of person:</p>
+    <ul class="modal__list">
+      <li><b>Ownership.</b> No salespeople, no product managers, and no layers of management. You own the customer relationship and work directly with executives at leading financial services firms.</li>
+      <li><b>Autonomy.</b> Remote-first, complete tool freedom, and minimal process. We optimize for speed and judgment, not committees. Our goal is to reach $100M ARR with 20 engineers.</li>
+      <li><b>Upside.</b> We share profits across the team equally, with no cap. Our goal is for every engineer to earn $1M+ annually by 2027.</li>
+    </ul>
+    <p>If this resonates with you, we&rsquo;d love to talk.</p>
+  </div>
+</div>
+
 <script>
 (function () {
   const v = document.getElementById('bg');
@@ -144,12 +174,19 @@
   tryPlay();
 })();
 (function () {
-  const modal = document.getElementById('about');
-  const open  = () => { modal.classList.add('open');  document.body.classList.add('modal-open'); };
-  const close = () => { modal.classList.remove('open'); document.body.classList.remove('modal-open'); };
-  document.querySelectorAll('[data-about]').forEach(b => b.addEventListener('click', open));
-  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', close));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  const closeAll = () => {
+    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+    document.body.classList.remove('modal-open');
+  };
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
+    const m = document.getElementById(b.getAttribute('data-open'));
+    if (!m) return;
+    closeAll();
+    m.classList.add('open');
+    document.body.classList.add('modal-open');
+  }));
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', closeAll));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
 }());
 </script>
 </body>
