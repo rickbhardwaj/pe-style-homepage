@@ -11,11 +11,21 @@
      thesis and firm statement on the left, the selected case studies on the
      right, both reading over the moving city at night. */
   .stage { background: #0a0a0b; }
-  video.stage__bg { filter: contrast(1.04) saturate(1.06) brightness(0.98); object-position: center 60%; }
+  /* Two grades, switched by the viewer's local clock (see script below).
+     Day: brighter film to hold up against ambient light. Night: pulled back
+     so the page doesn't glare in a dark room. Both sit between the old
+     0.82 (too dark) and 0.98 (too bright) grades. */
+  video.stage__bg { filter: contrast(1.05) saturate(1.05) brightness(0.92); object-position: center 60%; transition: filter 1.2s ease; }
   .scrim {
     background:
-      linear-gradient(180deg, rgba(8,8,10,0.50) 0%, rgba(8,8,10,0.10) 32%, rgba(8,8,10,0.18) 62%, rgba(8,8,10,0.82) 100%),
-      linear-gradient(90deg, rgba(8,8,10,0.68) 0%, rgba(8,8,10,0.26) 45%, rgba(8,8,10,0.34) 100%);
+      linear-gradient(180deg, rgba(8,8,10,0.58) 0%, rgba(8,8,10,0.16) 32%, rgba(8,8,10,0.26) 62%, rgba(8,8,10,0.86) 100%),
+      linear-gradient(90deg, rgba(8,8,10,0.72) 0%, rgba(8,8,10,0.32) 45%, rgba(8,8,10,0.34) 100%);
+  }
+  .stage--night video.stage__bg { filter: contrast(1.05) saturate(1.04) brightness(0.86); }
+  .stage--night .scrim {
+    background:
+      linear-gradient(180deg, rgba(8,8,10,0.62) 0%, rgba(8,8,10,0.20) 32%, rgba(8,8,10,0.30) 62%, rgba(8,8,10,0.88) 100%),
+      linear-gradient(90deg, rgba(8,8,10,0.74) 0%, rgba(8,8,10,0.36) 45%, rgba(8,8,10,0.34) 100%);
   }
 
   /* header: lone About link, top-left */
@@ -167,6 +177,15 @@
   v.addEventListener('canplay', tryPlay);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
   tryPlay();
+})();
+(function () {
+  const stage = document.querySelector('.stage');
+  const apply = () => {
+    const h = new Date().getHours();
+    stage.classList.toggle('stage--night', h >= 19 || h < 7);
+  };
+  apply();
+  setInterval(apply, 5 * 60 * 1000);
 })();
 (function () {
   const closeAll = () => {
