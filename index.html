@@ -61,6 +61,7 @@
     padding: clamp(13px, 1.9vh, 18px) 0;
     border-bottom: 1px solid rgba(244,243,239,0.18);
   }
+  .case-row--unnumbered { grid-template-columns: 1fr; }
   .case-row .num { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: rgba(244,243,239,0.55); }
   .case-row .name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(16px, 1.7vw, 21px); }
   .case-row .name b { font-style: normal; font-family: var(--sans); font-weight: 400; font-size: clamp(14px, 1.45vw, 17px); }
@@ -118,21 +119,15 @@
       <div class="lede">
         <h1 class="headline">Building the <em>Automated Firm</em></h1>
         <div class="body">
-          <p>Strange Loop builds AI agents for asset managers that execute critical control and compliance work&thinsp;—&thinsp;from fund administration and tax to NAV review and reconciliations.</p>
-          <p>Each AI agent is owned by each firm, learns their policies, and produces auditable work ready for human sign-off.</p>
+          <p>Strange Loop partners with a small number of firms to build proprietary AI systems that transform their operations and help them become category leaders</p>
         </div>
       </div>
 
-      <section class="cases" id="cases" aria-label="Selected Case Studies">
-        <p class="intro">Selected Case Studies</p>
+      <section class="cases" id="cases" aria-label="Selected Case Study">
+        <p class="intro">Selected Case Study</p>
         <div class="caselist">
-          <div class="case-row">
-            <span class="num">01</span>
-            <span class="name"><img class="brand brand--pwc" src="logos/pwc-wiki.svg" alt="PwC">&thinsp;—&thinsp;<b>Partnership Tax Preparation Agent</b></span>
-          </div>
-          <div class="case-row">
-            <span class="num">02</span>
-            <span class="name"><span class="brand brand--kkr" role="img" aria-label="KKR"></span>&thinsp;—&thinsp;<b>Fund Administration Review Agent</b></span>
+          <div class="case-row case-row--unnumbered">
+            <span class="name"><b>Automating partnership tax across $30 trillion in assets with a Big Four firm</b></span>
           </div>
         </div>
       </section>
@@ -145,7 +140,9 @@
   <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
     <p class="modal__eyebrow">Company</p>
-    <p>Strange Loop was founded in 2021 by Rick, Andrew, and Adam. We&rsquo;re a team of engineers from the original Amazon Alexa team. We&rsquo;ve raised venture capital from top AI investors like NFDG and F500 C-suite.</p>
+    <p>We believe a new category of software companies is emerging: the High Frequency Software Firm. These firms will resemble elite law firms more than traditional software vendors: lean teams with a reputation for exceptional talent and institutional trust will partner with top institutions to build products that absorb not only internal software budgets, but large portions of the operational labor.</p>
+    <p>We&rsquo;re the first of these firms. We work with one firm per category (tax, private equity, law, etc.) and focus on making them win their category with proprietary, frontier AI products &ndash; and sharing the upside as we win together.</p>
+    <p>Strange Loop was founded in 2022 by <a href="https://www.linkedin.com/in/rick-bhardwaj-49a4ba76" target="_blank" rel="noopener noreferrer">Rick</a>, <a href="https://www.linkedin.com/in/andrew-stahlman-2b11b28b/" target="_blank" rel="noopener noreferrer">Andrew</a>, and <a href="https://www.linkedin.com/in/adam-harwood/" target="_blank" rel="noopener noreferrer">Adam</a>. We&rsquo;re a team of Amazon AI engineers who helped launch Amazon Alexa and AWS&rsquo;s first generation of AI services.</p>
     <p class="modal__contact">
       Inquiries: <a href="mailto:contact@strangelooplabs.ai">contact@strangelooplabs.ai</a><br>
       Address: 18 W 18th St, New York, NY 10011
@@ -158,15 +155,13 @@
   <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
     <p class="modal__eyebrow">Careers</p>
-    <p class="modal__lead">As AI becomes increasingly capable of professional work, the highest-leverage opportunity for exceptional engineers is no longer building software tools, but rather to embed within leading firms and rearchitect their operations around AI.</p>
-    <p>As a result, we&rsquo;re looking for a rare kind of engineer: someone who combines engineering rigor, product intuition, business judgment, and customer-facing charisma. Someone who can sit alongside executives and domain experts, identify leverage, and ship high-impact systems at extraordinary speed.</p>
-    <p>In other words: former founders, future founders, and engineers who think like owners. We&rsquo;ve built an engineering organization around this type of person:</p>
+    <p class="modal__lead">We&rsquo;re building an organization that appeals to a rare kind of engineer: someone who can work alongside executives and domain experts and ship consequential systems at extraordinary speed. They are exceptional builders with unusual business instincts, often former or future founders like ourselves.</p>
     <ul class="modal__list">
-      <li><b>Ownership.</b> No salespeople, no product managers, and no layers of management. You own the customer relationship and work directly with executives at leading financial services firms.</li>
-      <li><b>Autonomy.</b> Remote-first, complete tool freedom, and minimal process. We optimize for speed and judgment, not committees. Our goal is to reach $100M ARR with 20 engineers.</li>
-      <li><b>Upside.</b> We share profits across the team equally, with no cap. Our goal is for every engineer to earn $1M+ annually by 2027.</li>
+      <li><b>Maximum ownership:</b> There are no salespeople, product managers, or layers of management. Engineers own the customer relationship and work directly with executives from the initial idea through deployment.</li>
+      <li><b>Maximum autonomy:</b> We&rsquo;re remote-first, offer complete freedom of tools, and keep process to a minimum. Given how selective we are with our engagements, we intend to keep our team small and talent-dense, which lets us optimize for freedom, speed, and autonomy.</li>
+      <li><b>Maximum upside:</b> Profits are shared equally across the team, with no cap. In 2026, our profit share bonus was $100k. Our 2027 goal is $1M.</li>
     </ul>
-    <p>If this resonates with you, we&rsquo;d love to talk.</p>
+    <p>If this sounds like the kind of company you should be building, we&rsquo;d love to talk.</p>
   </div>
 </div>
 
