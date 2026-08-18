@@ -75,17 +75,6 @@
             mask: url(logos/kkr-wiki.svg) no-repeat left center / contain;
   }
 
-  /* contact block in the Company panel */
-  .modal__contact {
-    font-family: var(--mono); font-size: 13px; line-height: 2;
-    letter-spacing: .02em; color: rgba(244,243,239,0.6);
-  }
-  .modal__contact a { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
-  .modal__contact a:hover { color: #fff; }
-  #about .modal__inner a { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
-  #about .modal__inner a:hover { color: #fff; }
-  #about .modal__eyebrow--section { margin-top: clamp(38px, 6vh, 58px); }
-
   /* careers list */
   .modal__list { list-style: none; margin: 0 0 1.25em; padding: 0; }
   .modal__list li {
@@ -112,7 +101,6 @@
 
   <header class="nav nav--stack">
     <nav class="sublinks">
-      <button class="navlink" type="button" data-open="about">Company</button>
       <button class="navlink" type="button" data-open="careers">Careers</button>
     </nav>
   </header>
@@ -122,7 +110,9 @@
       <div class="lede">
         <h1 class="headline">Building the <em>Automated Firm</em></h1>
         <div class="body">
-          <p>Strange Loop partners with financial services firms to make operations autonomous with AI</p>
+          <p>Strange Loop partners with finance services firms to build custom AI products that automate core operations.</p>
+          <p>We operate and improve these products as AI advances, tailoring them to each firm&rsquo;s expertise, becoming their durable competitive advantage.</p>
+          <p>We&rsquo;re a team of applied AI engineers who helped launch Amazon Alexa and AWS AI.</p>
         </div>
       </div>
 
@@ -135,25 +125,6 @@
         </div>
       </section>
     </div>
-  </div>
-</div>
-
-<!-- About -->
-<div class="modal modal--long" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
-  <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
-  <div class="modal__inner">
-    <p class="modal__eyebrow">Company</p>
-    <p>As AI becomes a core competitive advantage, firms can no longer rely on off-the-shelf SaaS. Neither can they rely on fragile, quickly outdated software from builders who aren&rsquo;t working at the frontier of AI.</p>
-    <p>Strange Loop is pioneering a new model.</p>
-    <p>We&rsquo;re a team of applied AI engineers who partner with category-defining firms to build AI products that automate core operations end-to-end.</p>
-    <p>Each product captures the firm&rsquo;s expertise, is owned entirely by the firm, and becomes a durable competitive advantage.</p>
-    <p>We operate and continuously improve these products as AI advances, backed by an enterprise-grade platform for monitoring, security, and compliance.</p>
-    <p class="modal__eyebrow modal__eyebrow--section">About</p>
-    <p>Strange Loop was founded in 2022 by <a href="https://www.linkedin.com/in/rick-bhardwaj-49a4ba76" target="_blank" rel="noopener noreferrer">Rick</a>, <a href="https://www.linkedin.com/in/andrew-stahlman-2b11b28b/" target="_blank" rel="noopener noreferrer">Andrew</a>, and <a href="https://www.linkedin.com/in/adam-harwood/" target="_blank" rel="noopener noreferrer">Adam</a>. We&rsquo;re a team of Amazon AI engineers who helped launch Amazon Alexa and AWS&rsquo;s first generation of AI services.</p>
-    <p class="modal__contact">
-      Inquiries: <a href="mailto:contact@strangelooplabs.ai">contact@strangelooplabs.ai</a><br>
-      Address: 18 W 18th St, New York, NY 10011
-    </p>
   </div>
 </div>
 
