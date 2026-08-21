@@ -55,17 +55,16 @@
   .lede__link { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
   .lede__link:hover { color: #fff; }
 
-  .products .intro { margin-top: 0; }
-  .product-list { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid rgba(244,243,239,0.22); }
-  .product-row { padding: clamp(11px, 1.55vh, 15px) 0; border-bottom: 1px solid rgba(244,243,239,0.18); }
-  .product-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
-  .product-client {
-    flex: 0 0 auto; font-family: var(--mono); font-size: 10px;
-    letter-spacing: .14em; text-transform: uppercase; color: rgba(244,243,239,0.58);
+  .automations .intro { margin-top: clamp(20px, 3vh, 30px); }
+  .automation-trust {
+    margin: 0; max-width: 42ch; font-family: var(--serif); font-weight: 300;
+    font-size: clamp(18px, 1.9vw, 24px); line-height: 1.35; color: rgba(244,243,239,0.9);
   }
+  .product-list { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid rgba(244,243,239,0.22); }
+  .product-row { padding: clamp(14px, 2vh, 19px) 0; border-bottom: 1px solid rgba(244,243,239,0.18); }
+  .product-heading { margin-bottom: 5px; }
   .product-name { font-family: var(--sans); font-size: clamp(14px, 1.3vw, 16.5px); font-weight: 500; color: #fff; }
   .product-desc { margin: 0; font-size: clamp(12px, 1vw, 14px); line-height: 1.45; color: rgba(244,243,239,0.72); }
-  .product-users { color: rgba(244,243,239,0.5); }
 
   /* client logos: knocked out to white over the film */
   .brand--pwc { height: 1.3em; width: auto; transform: translateY(.24em); filter: brightness(0) invert(1); }
@@ -144,24 +143,17 @@
         </div>
       </div>
 
-      <section class="products" id="products" aria-label="Selected Products">
-        <p class="intro">Selected Products</p>
+      <section class="automations" id="automations" aria-label="Selected Automations">
+        <p class="automation-trust">Trusted by leading firms with operations spanning trillions in assets</p>
+        <p class="intro">Selected Automations</p>
         <div class="product-list">
           <article class="product-row">
-            <div class="product-heading"><span class="product-client">PwC</span><span class="product-name">1065 Automation</span></div>
-            <p class="product-desc">Prepares, reviews, and files Form 1065 partnership returns. <span class="product-users">For partnership tax teams.</span></p>
+            <div class="product-heading"><span class="product-name">Partnership Tax Automation</span></div>
+            <p class="product-desc">Prepares, reviews, and files Form 1065 partnership returns, supporting tax preparers and reviewers.</p>
           </article>
           <article class="product-row">
-            <div class="product-heading"><span class="product-client">PwC</span><span class="product-name">Book-to-Tax / H3</span></div>
-            <p class="product-desc">Transforms client financial records into book-to-tax calculations. <span class="product-users">For tax preparers and reviewers.</span></p>
-          </article>
-          <article class="product-row">
-            <div class="product-heading"><span class="product-client">PwC</span><span class="product-name">State K-1 Extraction</span></div>
-            <p class="product-desc">Extracts structured tax data from State K-1 PDFs. <span class="product-users">For tax teams.</span></p>
-          </article>
-          <article class="product-row">
-            <div class="product-heading"><span class="product-client">KKR</span><span class="product-name">Capital Reconciliation</span></div>
-            <p class="product-desc">Reconciles fund-administration data against signed-off NAV workbooks. <span class="product-users">For fund controllers and reviewers.</span></p>
+            <div class="product-heading"><span class="product-name">Capital Reconciliation</span></div>
+            <p class="product-desc">Reconciles fund-administration data against signed-off NAV workbooks for fund controllers and reviewers.</p>
           </article>
         </div>
       </section>
@@ -169,7 +161,7 @@
   </div>
 
   <footer class="legal-footer">
-    <span>&copy; 2025 StrangeLoopLabs</span>
+    <span>&copy; 2026 StrangeLoopLabs</span>
     <span class="legal-footer__links">
       <a href="https://www.strangelooplabs.ai/privacy-policy">Privacy Policy</a>
       <a href="https://www.strangelooplabs.ai/terms">Terms of Service</a>
