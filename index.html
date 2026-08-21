@@ -75,14 +75,6 @@
             mask: url(logos/kkr-wiki.svg) no-repeat left center / contain;
   }
 
-  /* careers list */
-  .modal__list { list-style: none; margin: 0 0 1.25em; padding: 0; }
-  .modal__list li {
-    font-family: var(--sans); font-weight: 400;
-    font-size: clamp(15.5px, 1.45vw, 18px); line-height: 1.66;
-    color: rgba(244,243,239,0.82); margin: 0 0 1em; max-width: 62ch;
-  }
-  .modal__list b { color: #f4f3ef; font-weight: 500; }
   .modal__apply { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
   .modal__apply:hover { color: #fff; }
 
@@ -90,11 +82,10 @@
     font-family: var(--mono); font-size: 13px; line-height: 2;
     letter-spacing: .02em; color: rgba(244,243,239,0.6);
   }
-  .modal__contact a, #company .modal__inner > p a {
+  .modal__contact a, #about .modal__inner > p a {
     text-decoration: underline; text-underline-offset: 3px; transition: color .2s;
   }
-  .modal__contact a:hover, #company .modal__inner > p a:hover { color: #fff; }
-  #company .modal__eyebrow--section { margin-top: clamp(38px, 6vh, 58px); }
+  .modal__contact a:hover, #about .modal__inner > p a:hover { color: #fff; }
 
   /* tall panels (Careers) scroll from the top rather than centring */
   .modal--long .modal__inner { margin: 0 auto; }
@@ -127,7 +118,7 @@
 
   <header class="nav nav--stack">
     <nav class="sublinks">
-      <button class="navlink" type="button" data-open="company">Company</button>
+      <button class="navlink" type="button" data-open="about">About</button>
       <button class="navlink" type="button" data-open="team">Team</button>
       <button class="navlink" type="button" data-open="platform">Platform</button>
     </nav>
@@ -169,17 +160,11 @@
   </footer>
 </div>
 
-<!-- Company -->
-<div class="modal modal--long" id="company" role="dialog" aria-modal="true" aria-label="About Strange Loop">
+<!-- About -->
+<div class="modal modal--long" id="about" role="dialog" aria-modal="true" aria-label="About Strange Loop">
   <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
-    <p class="modal__eyebrow">Company</p>
-    <p>As AI becomes a core competitive advantage, firms can no longer rely on off-the-shelf SaaS. Neither can they rely on fragile, quickly outdated software from builders who aren&rsquo;t working at the frontier of AI.</p>
-    <p>Strange Loop is pioneering a new model.</p>
-    <p>We&rsquo;re a team of applied AI engineers who partner with category-defining firms to build AI products that automate core operations end-to-end.</p>
-    <p>Each product captures the firm&rsquo;s expertise, is owned entirely by the firm, and becomes a durable competitive advantage.</p>
-    <p>We operate and continuously improve these products as AI advances, backed by an enterprise-grade platform for monitoring, security, and compliance.</p>
-    <p class="modal__eyebrow modal__eyebrow--section">About</p>
+    <p class="modal__eyebrow">About</p>
     <p>Strange Loop was founded in 2022 by <a href="https://www.linkedin.com/in/rick-bhardwaj-49a4ba76" target="_blank" rel="noopener noreferrer">Rick</a>, <a href="https://www.linkedin.com/in/andrew-stahlman-2b11b28b/" target="_blank" rel="noopener noreferrer">Andrew</a>, and <a href="https://www.linkedin.com/in/adam-harwood/" target="_blank" rel="noopener noreferrer">Adam</a>. We&rsquo;re a team of Amazon AI engineers who helped launch Amazon Alexa and AWS&rsquo;s first generation of AI services.</p>
     <p class="modal__contact">
       Inquiries: <a href="mailto:contact@strangelooplabs.ai">contact@strangelooplabs.ai</a><br>
@@ -193,13 +178,10 @@
   <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
     <p class="modal__eyebrow">Team</p>
-    <p>We intend to only work with a select number of category-defining firms where we can deliver transformative value. As a result, we intend to keep our team lean, which lets us optimize for freedom, ownership, and upside:</p>
-    <ul class="modal__list">
-      <li>We&rsquo;re a team of generalist engineers, and only engineers. There are no salespeople, PMs, or managers, nor are there separate platform/ML/FDE teams. Engineers own the customer relationship, sit next to executives and experts, ship robust systems at extraordinary speed, and contribute back learnings from the field to our core platform.</li>
-      <li>We&rsquo;re remote-first, offer complete freedom of tools, and keep process to a minimum.</li>
-      <li>A portion of profits are shared equally across the team, with no cap. In 2026, our profit share bonus was $500k.</li>
-    </ul>
-    <p>If you&rsquo;re a former/future founder, we believe you&rsquo;ll fit this role perfectly. <a class="modal__apply" href="https://jobs.ashbyhq.com/strange-loop-labs">Apply here.</a></p>
+    <p>Enterprise technology is broken, with each deployment fractured amongst platforms, sales teams, systems integrators, and internal IT. The result is predictable: roadmaps that age quickly, integrations that never end, and brittle products that fail to evolve with the people using them.</p>
+    <p>Strange Loop works differently. We&rsquo;re a lean, talent-dense team of generalist engineers. We don&rsquo;t have salespeople, PMs, or managers. Engineers own the customer relationship from beginning to end, working directly with executives and experts to discover problems, shipping robust agents at extraordinary speed, and carrying what they learn in the field back into our core platform.</p>
+    <p>Our org is designed around high trust and shared upside. We&rsquo;re remote-first and keep process to a minimum. Profits are shared equally across the team, with average engineer comp on track to reach $1M+ by 2027.</p>
+    <p>In other words, we&rsquo;re a team of future and former founders. If this sounds like the kind of company you want to build, we&rsquo;d love to hear from you. <a class="modal__apply" href="https://jobs.ashbyhq.com/strange-loop-labs">Apply here.</a></p>
   </div>
 </div>
 
