@@ -53,9 +53,6 @@
   }
   .lede .body p:last-child { margin-bottom: 0; }
   .lede .body em { font-style: italic; color: #fff; }
-  .lede__link { text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
-  .lede__link:hover { color: #fff; }
-
   .automations .intro { margin-top: 0; }
   .product-list { margin-top: clamp(12px, 2vh, 20px); border-top: 1px solid rgba(244,243,239,0.22); }
   .product-row { padding: clamp(14px, 2vh, 19px) 0; border-bottom: 1px solid rgba(244,243,239,0.18); }
@@ -84,6 +81,24 @@
   }
   .modal__contact a:hover, #about .modal__inner > p a:hover { color: #fff; }
 
+  #platform .modal__inner { max-width: 880px; }
+  .platform-intro { max-width: 60ch; }
+  .platform-stack { margin-top: clamp(34px, 5vh, 54px); border-top: 1px solid rgba(244,243,239,0.28); }
+  .platform-layer {
+    display: grid; grid-template-columns: 42px 1fr;
+    gap: clamp(14px, 2.5vw, 34px); padding: clamp(20px, 3.2vh, 30px) 0;
+    border-bottom: 1px solid rgba(244,243,239,0.2);
+  }
+  .platform-layer__number {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+    color: rgba(244,243,239,0.45); padding-top: 3px;
+  }
+  .platform-layer__content h2 {
+    margin: 0 0 8px; font-family: var(--sans); font-size: clamp(17px, 1.8vw, 22px);
+    line-height: 1.3; font-weight: 500; letter-spacing: -.01em;
+  }
+  .platform-layer__content p { margin-bottom: 0; font-size: clamp(14px, 1.25vw, 16px); }
+
   /* tall panels (Careers) scroll from the top rather than centring */
   .modal--long .modal__inner { margin: 0 auto; }
 
@@ -103,6 +118,8 @@
   }
   @media (max-width: 520px) {
     .legal-footer { align-items: flex-start; flex-direction: column; gap: 7px; }
+    .platform-layer { grid-template-columns: 30px 1fr; }
+    .platform-layer__content { grid-column: 2; }
   }
 </style>
 </head>
@@ -127,7 +144,6 @@
         <h1 class="headline">Building the <em>Autonomous Firm</em></h1>
         <div class="body">
           <p>Strange Loop automates compliance operations at major financial institutions.</p>
-          <p><a class="lede__link" href="#team" data-open="team">Our team</a> embeds with each firm to tailor our <a class="lede__link" href="#platform" data-open="platform">specialized AI agents</a> to their institutional expertise, delivering value in weeks and full automation in months.</p>
         </div>
       </div>
 
@@ -136,7 +152,7 @@
         <div class="product-list">
           <article class="product-row">
             <div class="product-heading"><span class="product-name">Big Four Accounting Firm</span></div>
-            <p class="product-desc">Automating partnership tax preparation and review end to end from ingesting client financial data through final filing, saving more than 300,000 hours annually</p>
+            <p class="product-desc">Automating partnership tax preparation and review end to end, from client financials ingestion through final filing, saving more than 300,000 hours annually</p>
           </article>
         </div>
       </section>
@@ -178,10 +194,35 @@
 </div>
 
 <!-- Platform -->
-<div class="modal" id="platform" role="dialog" aria-modal="true" aria-label="Strange Loop Platform">
+<div class="modal modal--long" id="platform" role="dialog" aria-modal="true" aria-label="Strange Loop Platform">
   <button class="modal__close" type="button" data-close aria-label="Close">&#10005;</button>
   <div class="modal__inner">
     <p class="modal__eyebrow">Platform</p>
+    <p class="modal__lead platform-intro">The Strange Loop Platform enables our team to build robust finance agents in a fraction of the time required by traditional development teams.</p>
+    <p class="modal__lead platform-intro">Every product is tailored to each firm and turns institutional expertise into a durable competitive advantage that the firm owns.</p>
+    <div class="platform-stack">
+      <section class="platform-layer">
+        <span class="platform-layer__number">01</span>
+        <div class="platform-layer__content">
+          <h2>Product Layer</h2>
+          <p>Purpose-built workflows and interfaces that reflect each firm&rsquo;s processes, systems, controls, and institutional expertise.</p>
+        </div>
+      </section>
+      <section class="platform-layer">
+        <span class="platform-layer__number">02</span>
+        <div class="platform-layer__content">
+          <h2>Agent Layer</h2>
+          <p>Reusable agents engineered for financial reconciliation and compliance.</p>
+        </div>
+      </section>
+      <section class="platform-layer">
+        <span class="platform-layer__number">03</span>
+        <div class="platform-layer__content">
+          <h2>Infrastructure Layer</h2>
+          <p>Deployable in the cloud or on premises, with enterprise-grade security, controls, monitoring, and ongoing support built in. SOC 2 compliant.</p>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 
